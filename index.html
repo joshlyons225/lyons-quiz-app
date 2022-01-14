@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Coding Quiz Challenge</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Code Quiz!!</title>
 </head>
+
 <body>
     <!-- Header -->
     <header class="container-fluid">
@@ -16,85 +18,95 @@
             <h1>Web Developer Quiz Showdown</h1>
         </nav>
     </header>
-    
-    <!-- Main Section -->
-    <main class="container">
+
+    <!-- Highscore and Timer -->
+    <div class="container" id="top-line">
         <div class="row p-1 mx-1">
-            <div class="col-sm-6 text-left d-flex justify-content-start float-left">
-                <!-- link redirect to highscores html page?? (figure out what to do with highscores)-->
-                <h3 id="highscores">View High Scores</a></h3>
+            <div class="col-sm-6 text-left py-3 d-flex justify-content-start float-left">
+                <div class="highScore">View Highscores</div>
             </div>
-            <div class="col-sm-6 text-right d-flex justify-content-end float-right">
-                <h3 id="timer">Time Remaining: 60</h3>
+            <div class="col-sm-6 text-right py-3 d-flex justify-content-end float-right">
+                <div class="timer">Time: 60</div>
             </div>
         </div>
+    </div>
+      
+    <!-- Homepage Section -->
+    <div class="container" id="quizContainer">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card" style="width: 100%">
+                    <div class="card-body">
+                        <h1 class="card-title font-weight-bold text-center">Coding Quiz Challenge</h1>
+                        <hr id="win" />
+                        <p class="card-text text-justify p-3 m-3">Answer as many developer questions as possible during the alloted time limit. Any incorrect answers will deduct 10 seconds from your time limit.
+                            <br>
+                            <br>
+                            <strong>Good Luck!</strong>
+                        </p>
+                        <hr id="win" />
+                    </div>
+                    <div>
+                        <div>
+                            <button type="button" class="btn btn-primary rounded-pill" id="start">Start Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div class="container bg-white w-75 p-4">
-            <!-- Home page section -->
-            <section id="frontpage" class="text-center">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h1 class="font-weight-bold">Coding Quiz Challenge</h1>
-                        <h3 class="text-justify p-3 m-3">Answer as many developer questions as possible during the alloted time limit. Any incorrect answers will deduct 10 seconds from your time limit.</h3>
-                    </div>
+            <!-- Quiz questions -->
+            <div class="col-lg-12" id="removePadding">
+                <br>
+                <div class="question-display"></div>
+                <br>
+                <ul id="button-display"></ul>
+                <div class="areYouRight">
+                    <div class="timeout"></div>
                 </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <button type="button" class="btn btn-primary rounded-pill" id="start-btn">Start Quiz!</button>
-                    </div>
-                </div>
-            </section>
 
-            <!-- Quiz section -->
-            <section id="quiz">
-                <div class="row p-2">
-                    <div class="col m-3">
-                        <h2 id="questions"></h2>
-                    </div>
-                </div>
-                <div class="row p-2">
-                    <div class="col m-3">
-                        <ul id="answer-buttons" class="btn btn-primary rounded pill"></ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Total score section -->
-            <section id="last-page">
-                <div class="row p-1">
+                <!-- High score section -->
+                <div class="final-page" style="display: none">
                     <div id="message"></div>
                     <div id="score"></div>
                     <div id="correct"></div>
                     <div id="incorrect"></div>
+                    <br>
+                    <div id="initials">
+                        <form>
+                            Enter initials:<input type="text" placeholder="Enter initials here" id="userInput"
+                                name="initials">
+                            <input type="button" id="submitInitials" style="color:darkblue;" value="Submit">
+                        </form>
+                    </div>
+                    
+
                 </div>
-                <div class="row">
-                    <div id="score-initals" class="col-12">
-                        <label for="YourInitials">Enter Your Initials:</label>
-                        <input type="text" name="YourInitials" id="xInitials">
-                        <button type="submit" class="btn btn-primary btn-md" id="submitBtn">Submit</button>
+                <div class="highScorePage" style="display:none">
+                    <h1 id="hsTitle">Highscores</h1>
+                    <hr id="win" />
+                    <ul id="hsArray"></ul>
+                    <!-- <hr id = "win"/> -->
+                    <div>
+                        <button type="button" id="goBack">Back</button>
+                        <button type="button" id="resetScores">Reset Highscores</button>
                     </div>
                 </div>
-            </section>
-
-            <!-- High score section -->
-            <section id="high-score-">
-                <h1 id="score-name">Highscores</h1>
-                <ul id="scoreArray"></ul>
-            </section>
+            </div>
         </div>
-    </main>
-    
+    </div>
 
-    <!-- Footer -->
-    <footer class="container-fluid">
+     <!-- Footer -->
+     <footer class="container-fluid">
         <div class="row py-3 d-flex bg-warning text-dark justify-content-center">
             <h2><i class="glyphicon p-2">&#xe085;</i>Made with pride by Josh Lyons | &copy 2022 by Lyons, Inc<i class="glyphicon p-2">&#xe067;</i></h2>
         </div>
     </footer>
 
-    <!-- js script libraries -->
+    <!-- Script libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./assets/js/script.js"></script>
+
 </body>
+
 </html>

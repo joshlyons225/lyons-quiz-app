@@ -1,0 +1,11 @@
+#top-line, #removePadding {
+    font-size: 20px;
+}
+
+.card-text {
+    font-size: 18px;
+}
+
+.question-display, #button-display {
+    font-size: 15px;
+}
