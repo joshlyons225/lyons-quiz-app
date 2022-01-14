@@ -60,9 +60,12 @@
             </section>
 
             <!-- Total score section -->
-            <section id="total-score">
+            <section id="last-page">
                 <div class="row p-1">
-                    <!-- place messages for time's up! and score -->
+                    <div id="message"></div>
+                    <div id="score"></div>
+                    <div id="correct"></div>
+                    <div id="incorrect"></div>
                 </div>
                 <div class="row">
                     <div id="score-initals" class="col-12">
@@ -71,6 +74,12 @@
                         <button type="submit" class="btn btn-primary btn-md" id="submitBtn">Submit</button>
                     </div>
                 </div>
+            </section>
+
+            <!-- High score section -->
+            <section id="high-score-">
+                <h1 id="score-name">Highscores</h1>
+                <ul id="scoreArray"></ul>
             </section>
         </div>
     </main>
