@@ -1,20 +1,15 @@
 // homepage start quiz button
 $("#start-btn").on("click", function () {
     $("#frontpage").hide();
+    $("#score-name").hide();
     $("#score-initals").hide();
     $("#timer").show();
     $("#questions").show();
     $("#answer-buttons").show();
-    quizQuestion.run();
-    quizQuestion.questionNumber = 0;
-    quizQuestion.correctGuesses = 0;
-    quizQuestion.incorrectGuesses = 0;
-    quizQuestion.getQuestion();
-    document.getElementById('xInitials').value = " ";
-})
+});
    
 // quiz question array
-questions: [
+var questions = [
     {
         questionText: "Inside which HTML element do we put the JavaScript?",
         questionAnswer: ["<scripting>", "<script>", "<js>", "<javascript>"],
@@ -65,24 +60,4 @@ questions: [
         questionAnswer: ["<!--This is a comment-->", '"This is a comment"', "// This is a comment", "***This is a comment***"],
         answer: "// This is a comment",
     }
-],
-
-// timer run
-run function () {
-    clearInterval(this.countDownTimer);
-    this.countDownTimer = setInterval(this.decrement, 1000);
-    quizQuestion.counter = 60;
-},
-decrement: function () {
-    quizQuestion.counter--;
-    $("#timer").html("Time Remaining: " + quizQuestion.counter);
-    if (quizQuestion.counter <= 0) {
-        quizQuestion.counter = 0;
-        clearInterval(quizQuestion.countDownTimer);
-        quizQuestion.finalPage();
-        window.alert("Time is up!");
-
-        $("#questions").hide();
-        $("#answer-buttons").hide();
-    }
-},
+];
