@@ -5,7 +5,7 @@ body {
 }
 
 #top-line, #removePadding {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 h1 {
@@ -16,10 +16,18 @@ h2 {
     font-size: 3rem;
 }
 
+header, footer, .card {
+    opacity: 0.8;
+}
+
 .card-text {
     font-size: 18px;
 }
 
 .question-display, #button-display, #start {
-    font-size: 15px;
+    font-size: 20px;
+}
+
+.question-display p, #message, #score, #correct, #incorrect, .areYouRight, #initials, #hsTitle {
+    color: antiquewhite;
 }
