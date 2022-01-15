@@ -1,11 +1,23 @@
+body {
+    background-image: url(..images/solutions-dots-connected-SH001.jpg);
+}
+
 #top-line, #removePadding {
     font-size: 20px;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
 }
 
 .card-text {
     font-size: 18px;
 }
 
-.question-display, #button-display {
+.question-display, #button-display, #start {
     font-size: 15px;
 }
