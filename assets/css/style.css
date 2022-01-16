@@ -28,6 +28,6 @@ header, footer, .card {
     font-size: 20px;
 }
 
-.question-display p, #message, #score, #correct, #incorrect, .areYouRight, #initials, #hsTitle {
+.question-display p, #message, #score, #correct, #incorrect, .areYouRight, #initials, #hsTitle, #hsTitle h1, #hsArray {
     color: antiquewhite;
 }
