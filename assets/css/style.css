@@ -1,33 +1,47 @@
 body {
-    background-image: url("../images/body-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("../images/body-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-#top-line, #removePadding {
-    font-size: 25px;
+#top-line,
+#removePadding {
+  font-size: 25px;
 }
 
 h1 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 h2 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
-header, footer, .card {
-    opacity: 0.8;
+header,
+footer,
+.card {
+  opacity: 0.8;
 }
 
 .card-text {
-    font-size: 18px;
+  font-size: 18px;
 }
 
-.question-display, #button-display, #start {
-    font-size: 20px;
+.question-display,
+#button-display,
+#start {
+  font-size: 20px;
 }
 
-.question-display p, #message, #score, #correct, #incorrect, .areYouRight, #initials, #hsTitle, #hsTitle h1, #hsArray {
-    color: antiquewhite;
+.question-display p,
+#message,
+#score,
+#correct,
+#incorrect,
+.correct-answer,
+#initials,
+#hsTitle,
+#hsTitle h1,
+#hsArray {
+  color: antiquewhite;
 }

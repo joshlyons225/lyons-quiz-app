@@ -1,111 +1,145 @@
 <!DOCTYPE html>
 <html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Show Your Stuff Code Quiz!!</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Code Quiz!!</title>
-</head>
-
-<body>
+  <body>
     <!-- Header -->
     <header class="container-fluid">
-        <nav class="navbar py-5 d-flex bg-primary text-light font-weight-bold justify-content-center">
-            <h1>Web Developer Quiz Showdown</h1>
-        </nav>
+      <nav
+        class="navbar py-5 d-flex bg-primary text-light font-weight-bold justify-content-center"
+      >
+        <h1>Web Developer Quiz Showdown</h1>
+      </nav>
     </header>
 
     <!-- Highscore and Timer -->
     <div class="container" id="top-line">
-        <div class="row py-3 mx-1">
-            <div class="col-sm-6 text-left py-5 d-flex justify-content-start float-left">
-                <div class="highScore text-success">View Highscores</div>
-            </div>
-            <div class="col-sm-6 text-right py-3 d-flex justify-content-end float-right">
-                <div class="timer text-danger">Time: 60</div>
-            </div>
+      <div class="row py-3 mx-1">
+        <div
+          class="col-sm-6 text-left py-5 d-flex justify-content-start float-left"
+        >
+          <div class="highScore text-success">View Highscores</div>
         </div>
+        <div
+          class="col-sm-6 text-right py-3 d-flex justify-content-end float-right"
+        >
+          <div class="timer text-danger">Time: 60</div>
+        </div>
+      </div>
     </div>
-      
+
     <!-- Homepage Section -->
     <div class="container min-vh-100" id="quizContainer">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="card" style="width: 100%">
-                    <div class="card-body">
-                        <h2 class="card-title font-weight-bold text-center">Coding Quiz Challenge</h2>
-                        <hr id="win" />
-                        <p class="card-text text-justify p-3 m-3">Answer as many developer questions as possible during the alloted time limit. Any incorrect answers will deduct 10 seconds from your time limit.
-                            <br>
-                            <br>
-                            <strong>Good Luck!</strong>
-                        </p>
-                        <hr id="win" />
-                    </div>
-                    <div>
-                        <div>
-                            <button type="button" class="btn btn-primary rounded-pill" id="start">Start Quiz</button>
-                        </div>
-                    </div>
-                </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card" style="width: 100%">
+            <div class="card-body">
+              <h2 class="card-title font-weight-bold text-center">
+                Coding Quiz Challenge
+              </h2>
+              <directions id="set-show" />
+              <p class="card-text text-justify p-3 m-3">
+                Answer as many developer questions as possible during the
+                alloted time limit. Any incorrect answers will deduct 10 seconds
+                from your time limit.
+                <br />
+                <br />
+                <strong>Good Luck!</strong>
+              </p>
+              <directions id="set-show" />
             </div>
-
-            <!-- Quiz questions -->
-            <div class="col-lg-12" id="removePadding">
-                <br>
-                <div class="question-display"></div>
-                <br>
-                <ul id="button-display"></ul>
-                <div class="areYouRight">
-                    <div class="timeout"></div>
-                </div>
-
-                <!-- High score section -->
-                <div class="final-page" style="display: none">
-                    <div id="message"></div>
-                    <div id="score"></div>
-                    <div id="correct"></div>
-                    <div id="incorrect"></div>
-                    <br>
-                    <div id="initials">
-                        <form>
-                            Enter initials:<input type="text" placeholder="Enter initials here" id="userInput"
-                                name="initials">
-                            <input type="button" id="submitInitials" style="color:darkblue;" value="Submit">
-                        </form>
-                    </div>
-                    
-
-                </div>
-                <div class="highScorePage" style="display:none">
-                    <h1 id="hsTitle">Highscores</h1>
-                    <hr id="win" />
-                    <ul id="hsArray"></ul>
-                    <div>
-                        <button type="button" id="goBack">Back</button>
-                        <button type="button" id="resetScores">Reset Highscores</button>
-                    </div>
-                </div>
+            <div>
+              <div>
+                <button
+                  type="button"
+                  class="btn btn-primary rounded-pill"
+                  id="start"
+                >
+                  Go,Go,Go!
+                </button>
+              </div>
             </div>
+          </div>
         </div>
+
+        <!-- Quiz questions -->
+        <div class="col-lg-12" id="removePadding">
+          <br />
+          <div class="question-display"></div>
+          <br />
+          <ul id="button-display"></ul>
+          <div class="correct-answer">
+            <div class="timeout"></div>
+          </div>
+
+          <!-- End quiz section -->
+          <div class="final-page" style="display: none">
+            <div id="message"></div>
+            <div id="score"></div>
+            <div id="correct"></div>
+            <div id="incorrect"></div>
+            <br />
+            <div id="initials">
+              <form>
+                Enter initials:<input
+                  type="text"
+                  placeholder="Enter initials here"
+                  id="userInput"
+                  name="initials"
+                />
+                <input
+                  type="button"
+                  id="submitInitials"
+                  style="color: darkblue"
+                  value="Submit"
+                />
+              </form>
+            </div>
+          </div>
+
+          <!-- Highscore section -->
+          <div class="highScorePage" style="display: none">
+            <h1 id="hsTitle">Highscores</h1>
+            <directions id="set-show" />
+            <ul id="hsArray"></ul>
+            <div>
+              <button type="button" id="goBack">Back</button>
+              <button type="button" id="resetScores">Erase Winners</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-     <!-- Footer -->
-     <footer class="container-fluid">
-        <div class="row py-3 d-flex mt-auto bg-warning text-dark justify-content-center">
-            <h2><i class="glyphicon p-2">&#xe085;</i>Made with pride by Josh Lyons | &copy 2022 goldenGod, Inc<i class="glyphicon p-2">&#xe067;</i></h2>
-        </div>
+    <!-- Footer -->
+    <footer class="container-fluid">
+      <div
+        class="row py-3 d-flex mt-auto bg-warning text-dark justify-content-center"
+      >
+        <h2>
+          <i class="glyphicon p-2">&#xe085;</i>Made with pride by Josh Lyons |
+          &copy 2022 goldenGod, Inc<i class="glyphicon p-2">&#xe067;</i>
+        </h2>
+      </div>
     </footer>
 
     <!-- Script libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="./assets/js/script.js"></script>
-
-</body>
-
+  </body>
 </html>
